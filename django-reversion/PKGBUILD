@@ -1,0 +1,25 @@
+# Contributor: Notch <notch@cryptodrunks.net>
+
+pkgname=django-reversion
+pkgver=1.2.1
+pkgrel=1
+pkgdesc="Version control for Django models"
+arch=(any)
+url="http://code.google.com/p/django-reversion/"
+license=('BSD')
+depends=('python' 'django')
+makedepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=(!emptydirs)
+install=
+source=("http://django-reversion.googlecode.com/files/django-reversion-1.2.1.tar.gz")
+md5sums=("055235097a2fdb511e04d06ed9c3ebc4")
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  python setup.py install --root=$pkgdir/ --optimize=1 || return 1
+}
+
